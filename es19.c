@@ -30,12 +30,13 @@ int main () {
 
  if(tentativi <= 3 && num_casuale == num_utente) {
         printf("Aura\n"); 
-    } if( tentativi <= 10 == num_casuale == num_utente) {
-        printf("bravino\n");
+    } if(tentativi <= 10 && num_casuale == num_utente) {
+        printf("Bravino\n");
     } else {
-        printf("brutto\n");
+        printf("Brutto\n");
     }
-        return 0;
+    printf("Hai usato %d tentativi\n", tentativi);
+    return 0;
 }
 
     
