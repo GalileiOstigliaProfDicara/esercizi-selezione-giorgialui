@@ -6,10 +6,10 @@ int main () {
     int numero; 
     printf("inserisci un numero: \n");
     scanf("%d", &numero);
-    prinf ("i divisori di %d sono: ", numero);
+    printf ("i divisori di %d sono: ", numero);
     for (int i = 1; i <= numero; i++) {
         if (numero %i == 0) {
-            printf("%d - ", i);
+            printf("%d\t", i);
         }
     }
 }
