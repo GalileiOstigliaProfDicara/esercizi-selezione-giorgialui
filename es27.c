@@ -5,20 +5,40 @@
 se indovina vince il doppio di quanto ha puntato, se non indovina, vengono scalti i suoi soldi.
 L'utente continua a scommettere finchè non perde tutti i soldi.*/
 
-#include <stdio.h> 
-#include <stdlib.h>
-#include <time.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <time.h>
 
-int main() {
-    int cifra_iniziale, testa = 0, croce = 0, min = 1, max = 2, puntata, vincita, perdita;
+ int main() {
     srand(time(NULL));
+    int soldi_totali, soldi_scommessa, scommessa, moneta, tentativi=0;
+    do {
+        printf("Quanti soldi vuoi buttare oggi?");
+        scanf("%d", &soldi_totali);
+    }while(soldi_totali <= 0);
+    do {
+        printf("Quanti soldi vuoi buttare ad ogni scommessa?");
+        scanf("%d", &soldi_scommessa);
+    }while(soldi_scommessa > soldi_totali);
 
-    printf("inserisci quanti soldi vuoi giocare: "); 
-    scanf("%d", cifra_iniziale);
+    do {
+        soldi_totali = soldi_totali - scommessa;
+        do{
+            printf("vuoi puntare su testa (1) o su croce (2)?");
+            scanf("%d", &scommessa);
+        }while(scommessa!=1 && scommessa!=2);
+        moneta = rand()%2+1;
+        tentativi++;
+        if(moneta==scommessa){
+            soldi_totali = soldi_totali + scommessa*2;
+            printf("Hai vinto la scommessa!\n");
+        }else {
+            printf("Hai vinto la scommessa!\n");
+        }
+        printf("Ti rimangono %d soldi", soldi_totali);
+        
+    }while(soldi_totali>=soldi_scommessa);
+    printf("Dopo %d tentativi hai perso tutto...\n", tentativi);
 
-    printf("inserisci quanti soldi vuoi puntare ad ogni scommessa: "); 
-    scanf("%d, puntata");
-    
-    while(cifra_iniziale != 0)
-
-}
+    return 0;
+ }
