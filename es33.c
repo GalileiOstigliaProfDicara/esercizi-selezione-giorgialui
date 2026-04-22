@@ -7,7 +7,7 @@ int main (){
     float array[8], somma = 0, media = 0;
 
     for (int i = 0; i < 8; i++) {
-        printf("inserisci il valore di array ["d"] :" i;
+        printf("inserisci il valore di array ["d"]: ") i;
         scanf("%f", &array[i]);
         somma = somma + arrai[i];
     }
