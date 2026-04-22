@@ -3,15 +3,15 @@
 #include <stdio.h>
 
 int main() {
-    int num_pari, min = 0, max = 100;
+    int num_pari;
     printf("inserisci un numero pari: \n");
     scanf ("%d", &num_pari); 
     
     if (num_pari %2 != 0){
         num_pari ++;
     }
-    for (int i = num_pari; i <= 100; i += 2) {
-        printf("%d ", i);
+    for (int i = num_pari; i <= 100; i = i + 2) {
+        printf("%d\n", i);
     }
 
     return 0;

@@ -4,24 +4,23 @@ di un'automobile secondo per secondo finchè non arriva alla velocità di
 #include <stdio.h>
 
 int main() {
-    float accelerazione, velocita = 0, distanza = 0;    
-    int secondi = 0;
+    float accelerazione, velocita_incrementale = 0, velocita_obbiettivo = 100, distanza = 0;    
+    int tempo = 0;
 
-    printf("Inserisci l'accelerazione: \n");
-    scanf("%f", &accelerazione);
+    do{
+        printf("Inserisci l'accelerazione in m/s^2: \n");
+        scanf("%f", &accelerazione);
+    } while (accelerazione <= 0);
+    
+    velocita_obbiettivo = velocita_obbiettivo / 3.6; 
 
-    while (velocita < 100) {
-        secondi++;
+    while (velocita_incrementale < velocita_obbiettivo) {
+        velocita_incrementale = accelerazione * tempo;
+        tempo++;
+        distanza = 0.5 * accelerazione * tempo * tempo; 
 
-        velocita = velocita + accelerazione;
-        distanza = distanza + (velocita / 3.6);
-
-        printf("Secondo %d, Velocita: %.2f km/h\n", secondi, velocita);
+        printf("la tua velocità dopo %d secondi è %f m/s e hai percorso %f metri\n", tempo, velocita_incrementale, distanza);
+        tempo ++; 
     }
-
-    printf("\nHai raggiunto 100 km/h!\n");
-    printf("Tempo impiegato: %d secondi\n", secondi);
-    printf("Distanza percorsa: %.2f metri\n", distanza);
-
     return 0;
 }
