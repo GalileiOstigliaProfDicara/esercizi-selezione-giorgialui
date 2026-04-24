@@ -7,18 +7,20 @@ uanti sono i valori maggiori di 8.*/
 #include <time.h>
 
 int main() {
-    int array[50], conto = 0;
+    int array[50], conta = 0;
     srand(time(NULL));
 
     for (int i = 0; i < 50; i++) {
-       array[i] = (rand() % 10) + 1;
+       array[i] = (rand() % 10 - 1 + 1) + 1;
        printf("%d ", array[i]);
-
-        if (array[i] > 8) {
-            conto++;
-        }
     }
-    printf("Risultato: Ci sono %d valori maggiori di 8.\n", conto);
+
+    for (int i = 0; i < 50; i++) {
+        if (array[i] > 8) 
+        conta++;
+    }
+
+    printf("\nCi sono %d valori maggiori di 8\n", conta);
 
     return 0;
 }
