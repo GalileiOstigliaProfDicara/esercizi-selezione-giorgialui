@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 
+#include <stdio.h>
+
 int main() {
     int array[8], primi = 0, divisore, conta = 0, numero;
 
@@ -10,15 +12,15 @@ int main() {
     for (int i = 0; i < 8; i++) {
         scanf("%d", &array[i]);
     }
+
     printf("I numeri primi sono: ");
 
-    for(int i = 0; i < 8; i++){
+    for (int i = 0; i < 8; i++) {
         conta = 0;
-    if (array[i] >= 2) {
-
-        for (int divisore = 1; divisore <= array[i]; divisore++) {
-            if (array[i] % divisore == 0) {
-            conta++;
+        if (array[i] >= 2) {
+            for (divisore = 1; divisore <= array[i]; divisore++) {
+                if (array[i] % divisore == 0) {
+                    conta++;
                 }
             }
 
@@ -29,16 +31,7 @@ int main() {
         }
     }
     
-     
-    printf("\nil totale dei numeri primi è %d\n", conta);
+    printf("\nIl totale dei numeri primi è %d\n", primi);
 
     return 0;
 }
-
-
-
-
-
-       
-       
-
