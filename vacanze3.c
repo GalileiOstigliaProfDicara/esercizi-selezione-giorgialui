@@ -1,6 +1,5 @@
 /*Leggere un array di interi con 8 numeri e dire quali e quanti di questi sono primi.*/
 
-#include <stdio.h>
 
 #include <stdio.h>
 

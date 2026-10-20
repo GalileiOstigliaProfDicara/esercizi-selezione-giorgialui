@@ -9,22 +9,24 @@ int main() {
 
     printf("Inserisci 10 numeri:\n");
 
-    for( i = 0; i < 10; i++){
-        scanf("%d",&array[i]);
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &array[i]);
     }
 
-    printf("Numeri senza ripetizioni:  \n");
+    printf("Numeri senza ripetizioni: \n");
 
-    for(i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++) {
         conta = 0;
-    }
-    for(int j = 0; j < i; j++) {
-            if(array[i] == array[j])
-             conta = 1;
+        
+        for (int j = 0; j < i; j++) {
+            if (array[i] == array[j]) {
+                conta = 1; 
+            }
         }
 
-        if(conta == 0){
-            printf("%d ",array[i]);
+        if (conta == 0) {
+            printf("%d ", array[i]);
+        }
     }
 
     return 0;
