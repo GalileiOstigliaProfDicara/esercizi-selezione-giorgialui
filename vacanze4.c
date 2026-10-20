@@ -7,9 +7,8 @@ Ad esempio se l’array contiene  1, 2, 3, 1, 2, 4  il programma stamperà  1,2,
 int main() {
     int array[10], conta = 0, i;
 
-    printf("Inserisci 10 numeri:\n");
-
     for (int i = 0; i < 10; i++) {
+        printf("Inserisci 10 numeri:\n");
         scanf("%d", &array[i]);
     }
 

@@ -4,17 +4,21 @@ Ad esempio array1 0,2,3,7,8 array2 1,4,5,9,12 arrayfuso 0,1,2,3,4,5,7,8,9,12.*/
 
 
 #include <stdio.h>
+#define DIM 5
+#define DIM2 10
 
 int main() {
-    int array1[5], array2[5], array[10], conta, numero;
+    int array1[DIM], array2[DIM], array3[DIM2];
 
-    printf("Inserisci 5 numeri per il primo array (ordinati):\n");
-    for (int i = 0; i < 5; i++) {
+    int i = 0;
+
+    for (int i = 0; i < DIM; i++) {
+        printf("Inserisci 5 numeri per il primo array :\n");
         scanf("%d", &array1[i]);
     }
 
-    printf("Inserisci 5 numeri per il secondo array (ordinati):\n");
     for (int i = 0; i < 5; i++) {
+        printf("Inserisci 5 numeri per il secondo array (ordinati):\n");
         scanf("%d", &array2[i]);
     }
 

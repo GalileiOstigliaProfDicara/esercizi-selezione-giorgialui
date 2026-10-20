@@ -5,25 +5,24 @@ stampare quello che compare per primo*/
 #include <stdio.h>
 
 int main() {
-    int array[10], volte = 0, num, max = 0;
+    int array[10];
 
-    printf("Inserisci 10 numeri:\n");
     for (int i = 0; i < 10; i++) {
+        printf("inserisci il valore in posizione %d: ", i)
         scanf("%d", &array[i]);
     }
-
+    int conta, num_max, conta_max = 0;
     for (int i = 0; i < 10; i++) {
-        volte = 0;   
+        conta = 0;
         for (int j = 0; j < 10; j++) {
             if (array[i] == array[j]) {
-                volte++;
+                conta++;
             }
         }
 
-        if (volte > max) {
-            max = volte;
-            num = array[i];
-        }
+        if (conta > conta_max) {
+            num_max = array[i];
+            conta_max = conta;
     }
 
     printf("Il numero che compare più volte è %d e compare %d volte.\n", num, max);

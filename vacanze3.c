@@ -5,10 +5,9 @@
 
 int main() {
     int array[8], primi = 0, divisore, conta = 0, numero;
-
-    printf("Inserisci 8 numeri:\n");
     
     for (int i = 0; i < 8; i++) {
+        printf("Inserisci 8 numeri:\n");
         scanf("%d", &array[i]);
     }
 

@@ -1,27 +1,32 @@
 /*Leggere un array di interi di 8 posizioni e verificare se contiene tutti valori diversi.*/
 
 #include <stdio.h>
+#include <stdlib.h> 
+#include <time.h>
+#define DIM 8
 
 int main() {
-    int array[8], conta = 0;
+    int array[DIM], conta = 0, doppioni = 0;
+    srand (time(NULL));
 
-    printf("Inserisci 8 numeri:\n");
-    for (int i = 0; i < 8; i++) {
-        scanf("%d", &array[i]);
+    for (int i = 0; i < DIM; i++) {
+        array[i] = rand () % 20;
     }
 
-    for (int i = 0; i < 8; i++) {
-        for (int j = i + 1; j < 8; j++) {
+    for (int i = 0; i < DIM; i++) {
+        for (int j = 0; j < DIM; j++) {
             if (array[i] == array[j]) {
-                conta = 1;
+                conta ++;
             }
         }
     }
 
-    if (conta == 0) {
-        printf("L'array contiene tutti valori diversi.\n");
-    } else {
-        printf("L'array NON contiene tutti valori diversi.\n");
+    if (conta > 1) {
+       doppioni = 1;
+    } 
+    
+    if(doppioni == 0) {
+        printf ("tutti gli elementi sono diversi\n");
     }
 
     return 0;

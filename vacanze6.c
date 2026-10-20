@@ -2,27 +2,29 @@
 ci sono tutti i numeri interi tra 0 e 9.*/
 
 #include <stdio.h>
+#include <stdlib.h> 
+#include <time.h> 
+#define DIM 10
 
 int main() {
-    int array[10], conta = 0, numero = 0;
+    int array[DIM], max = 9, min = 0, conta = 0;
+    srand(time(NULL));
 
-    printf("Inserisci 10 numeri:\n");
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < DIM; i++) {
+        array[i] = rand()%(max - min + 1) - min;
         scanf("%d", &array[i]);
     }
 
-    for (numero = 0; numero < 10; numero++) {
+    for (int numero = 0; numero < 10; numero++){
+        conta = 0; 
         for (int i = 0; i < 10; i++) {
-            if (array[i] == numero) {
+            if (num == array[i]) {
                 conta++; 
             }
         }
-    }
-
-    if (conta == 10) {
-        printf("L'array contiene tutti i numeri tra 0 e 9\n");
-    } else {
-        printf("L'array NON contiene tutti i numeri tra 0 e 9\n");
+        if (conta == 0){
+            printf ("Il numero %d non è presente nell'array\n", numero); 
+        }
     }
 
     return 0;

@@ -4,26 +4,25 @@ Stampare man mano il contenuto dell’array.*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#define DIM 18
 
 int main() {
-    int array[18], conta = 0;
+    int array[DIM], i = 0, conta = 0;
 
     srand(time(NULL));
 
-    for (int i = 0; i < 18; i++) {
-        array[i] = (rand() % 90) + 1; 
-        
+    do {
+        array[i] = rand () % 90 + 1;
         for (int j = 0; j < i; j++) {
             if (array[i] == array[j]) {
-                i--;
+                conta ++;
             }
+        } 
+        if (conta == 0) {
+            printf("%d", array[i]);
+            i++;
         }
-    }
-    for (int i = 0; i < 18; i++) {
-        printf("%d ", array[i]);
-    }
-    printf("I 18 numeri sono:\n");
-    
+    } while(i < 18);     
 
     return 0;
 }
